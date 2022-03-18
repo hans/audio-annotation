@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+    server:
+        build: .
+        working_dir: /app
+        command: bash -c "make start-redis & make start-telemetry-server & make start-server"
+
+        ports:
+            - "8134:3000"
+
+        volumes:
+            - ./data:/app/data
+
+    # TODO do service layout properly without a monolithic image

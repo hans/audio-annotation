@@ -6,7 +6,7 @@ start-telemetry-server:
 	./node_modules/supervisor/lib/cli-wrapper.js --no-restart-on-err -i public telemetry-server.js
 
 start-redis:
-	redis-stable/src/redis-server redis.conf
+	redis-server redis.conf
 
 .PHONY: start install start-server start-redis commander
 
